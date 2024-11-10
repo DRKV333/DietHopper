@@ -1,18 +1,18 @@
 package com.rwtema.diethopper;
 
 import net.minecraft.block.Block;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = DietHopperMod.MODID, version = DietHopperMod.VERSION, acceptedMinecraftVersions = "[1.10.2,)")
+@Mod(modid = DietHopperMod.MODID, version = DietHopperMod.VERSION, acceptedMinecraftVersions = "[1.7.10,)")
 public class DietHopperMod {
-	static final String MODID = "diethopper";
-	static final String VERSION = "1.1";
+    public static final String MODID = "diethopper";
+    public static final String VERSION = "1.1";
 
-	@Mod.EventHandler
-	public void preinit(FMLPreInitializationEvent event) {
-		Block blockDietHopper = new BlockDietHopper();
-		ForgeRegistries.BLOCKS.register(blockDietHopper);
-	}
+    @Mod.EventHandler
+    public void preinit(FMLPreInitializationEvent event) {
+        // TODO: Replace the vanilla hopper instead of adding a new one.
+        GameRegistry.registerBlock(new BlockDietHopper(), "hopper");
+    }
 }
